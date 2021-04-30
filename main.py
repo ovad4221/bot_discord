@@ -5,7 +5,7 @@ from requests import get
 import datetime
 import asyncio
 
-TOKEN = "ODM3MzYxNzAzNjUyOTUwMDU4.YIrb2w.UF7nIp1gYoO75Mdv43HlfeFPLBo"
+TOKEN = "ODM3MzYxNzAzNjUyOTUwMDU4.YIrb2w.lUBFf41MluUhL9fxqjepIW6JCpw"
 
 
 def wait_and_send(seconds, minutes, hours):
@@ -19,6 +19,7 @@ class CommandTime(commands.Cog):
 
     @commands.command(name='set_timer')
     async def timer(self, ctx, hours, minutes, seconds):
+        ctx.send("Таймер поставлен")
         if wait_and_send(seconds, minutes, hours):
             await ctx.send("Время Х наступило!!!")
 
